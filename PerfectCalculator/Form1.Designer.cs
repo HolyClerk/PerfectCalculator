@@ -241,6 +241,7 @@
             this.buttonClear.TabIndex = 11;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonMinus
             // 
@@ -317,6 +318,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(14)))), ((int)(((byte)(20)))));
             this.panel1.Controls.Add(this.errorButton);
             this.panel1.Controls.Add(this.calcLabel);
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(12, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(560, 68);
@@ -339,7 +341,7 @@
             this.buttonMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.buttonMultiply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(123)))), ((int)(((byte)(99)))));
-            this.buttonMultiply.Location = new System.Drawing.Point(368, 293);
+            this.buttonMultiply.Location = new System.Drawing.Point(282, 217);
             this.buttonMultiply.Name = "buttonMultiply";
             this.buttonMultiply.Size = new System.Drawing.Size(80, 70);
             this.buttonMultiply.TabIndex = 19;
@@ -354,12 +356,13 @@
             this.buttonBracket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBracket.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.buttonBracket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(123)))), ((int)(((byte)(99)))));
-            this.buttonBracket.Location = new System.Drawing.Point(282, 217);
+            this.buttonBracket.Location = new System.Drawing.Point(282, 293);
             this.buttonBracket.Name = "buttonBracket";
             this.buttonBracket.Size = new System.Drawing.Size(80, 70);
             this.buttonBracket.TabIndex = 20;
             this.buttonBracket.Text = "(";
             this.buttonBracket.UseVisualStyleBackColor = false;
+            this.buttonBracket.Click += new System.EventHandler(this.buttonBracket_Click);
             // 
             // buttonReverseBracker
             // 
@@ -368,12 +371,13 @@
             this.buttonReverseBracker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReverseBracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.buttonReverseBracker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(123)))), ((int)(((byte)(99)))));
-            this.buttonReverseBracker.Location = new System.Drawing.Point(282, 293);
+            this.buttonReverseBracker.Location = new System.Drawing.Point(368, 293);
             this.buttonReverseBracker.Name = "buttonReverseBracker";
             this.buttonReverseBracker.Size = new System.Drawing.Size(80, 70);
             this.buttonReverseBracker.TabIndex = 21;
             this.buttonReverseBracker.Text = ")";
             this.buttonReverseBracker.UseVisualStyleBackColor = false;
+            this.buttonReverseBracker.Click += new System.EventHandler(this.buttonReverseBracker_Click);
             // 
             // buttonExp
             // 

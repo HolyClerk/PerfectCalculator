@@ -17,7 +17,7 @@ namespace PerfectCalculator
         int timeHour = 0;
         int errorTimer;
         int tickRedText = 0;
-        int lastDigitChanged;
+        int lastDigitChanged = -1;
 
         string errorMessage;
         string resultField = "";
@@ -53,8 +53,18 @@ namespace PerfectCalculator
             {
                 calcLabel.Text = ": " + resultField;
             }
+
+            if (calcLabel.Text.Length > 5) { buttonCalculate.FlatAppearance.BorderColor = Color.LightGreen; } 
+            else { buttonCalculate.FlatAppearance.BorderColor = Color.FromArgb(19, 23, 29); }
+
+            if (calcLabel.Text.Length != lastDigitChanged)
+            {
+                calcLabel.ForeColor = Color.White;
+                if (resultLabel.Text == "Упс, вы что-то сделали не так.") resultLabel.Text = "";
+            }
         }
 
+        // Ряд функций, отвечающий за event при нажатии кнопок
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
             try
@@ -64,9 +74,12 @@ namespace PerfectCalculator
             }
             catch (Exception a)
             {
-                resultLabel.Text = "Упс, вы что-то сделали не так. ";
-                errorMessage = a.ToString();
                 ErrorTimer.Enabled = true;
+                errorMessage = a.ToString();
+
+                resultLabel.Text = "Упс, вы что-то сделали не так.";
+                lastDigitChanged = calcLabel.Text.Length;
+                calcLabel.ForeColor = Color.Red;
             }
         }
 
@@ -156,12 +169,28 @@ namespace PerfectCalculator
             resultField += "^";
         }
 
+        private void buttonBracket_Click(object sender, EventArgs e) // (
+        {
+            resultField += "(";
+
+        }
+
+        private void buttonReverseBracker_Click(object sender, EventArgs e) // )
+        {
+            resultField += ")";
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e) // clear
+        {
+            resultField = "";
+
+        }
+
         // Действия при ошибке
         private void ErrorTimer_Tick(object sender, EventArgs e)
         {
             errorTimer++;
             errorButton.Visible = true;
-            
             if (errorTimer >= 50)
             {
                 errorTimer = 0;
